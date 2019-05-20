@@ -6,12 +6,15 @@
  * Time: 10:29
  */
 require 'header.php';
+$id = $_GET['id'];
 
-$sql = "SELECT marvelfilms.*, directors.*, directors.id AS directorID FROM directors JOIN marvelfilms ON directors.id = marvelfilms.director";
-$query = $db->query($sql);
+
+$sql = "SELECT marvelfilms.*, directors.*, directors.id AS directorID FROM directors JOIN marvelfilms ON directors.id = marvelfilms.director WHERE marvelfilms.id = :id";
+$query = $db->prepare($sql);
+$query->execute([
+        'id' => $id
+]);
 $movie = $query->fetch(PDO::FETCH_ASSOC);
-?>
-<?php
 
     echo "<h1> {$movie['filmName']} </h1>";
     ?>
