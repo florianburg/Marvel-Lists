@@ -1,0 +1,19 @@
+body{
+    background: chocolate;
+    text-align: center;
+}
+input{
+    width: 150px;
+}
+label {
+    width: 100px;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex-director-info{
+    display: flex;
+    justify-content: space-between;
+}

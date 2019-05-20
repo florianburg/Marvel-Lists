@@ -15,20 +15,20 @@ require 'config.php';
             background: chocolate;
             text-align: center;
         }
-        input{
-            width: 150px;
-        }
-        label {
-            width: 100px;
-        }
-        .links{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        a{
-            text-decoration: none   ;
-            color: black;
-        }
+            input{
+                width: 150px;
+            }
+            label {
+                width: 100px;
+            }
+            .links{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
     </style>
 </head>
 <body>

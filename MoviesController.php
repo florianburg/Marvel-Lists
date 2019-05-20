@@ -18,12 +18,12 @@
         $director = $_POST['director'];
         $writer = $_POST['writer'];
 
-        $sql = "INSERT INTO movies (movieName, mainCharacter, mainActor, runtime, director, writer) VALUES (:movieName, :mainCharacter, :mainActor, :runtime, :director, :writer)";
+        $sql = "INSERT INTO marvelfilms (filmName, mainCharacters, mainActors, runtime, director, writer) VALUES (:filmName, :mainCharacters, :mainActors, :runtime, :director, :writer)";
         $prepare = $db->prepare($sql);
         $prepare->execute([
-            ':movieName' => $movieName,
-            ':mainCharacter' => $mainCharacter,
-            ':mainActor' => $mainActor,
+            ':filmName' => $movieName,
+            ':mainCharacters' => $mainCharacter,
+            ':mainActors' => $mainActor,
             ':runtime' => $runtime,
             ':director' => $director,
             ':writer' => $writer
@@ -34,7 +34,7 @@
     }
     if ($_POST['type'] == 'delete'){
         $id = $_GET['id'];
-        $sql = "DELETE from movies WHERE id = :id";
+        $sql = "DELETE from marvelfilms WHERE id = :id";
         $prepare = $db->prepare($sql);
         $prepare->execute([
             ':id' => $id
@@ -46,17 +46,17 @@
     }
     if ($_POST['type'] == 'edit') {
 
-        $movieName = $_POST['movieName'];
-        $mainCharacter = $_POST['mainCharacter'];
-        $mainActor = $_POST['mainActor'];
+        $movieName = $_POST['filmName'];
+        $mainCharacter = $_POST['mainCharacters'];
+        $mainActor = $_POST['mainActors'];
         $runtime = $_POST['runtime'];
         $director = $_POST['director'];
         $writer = $_POST['writer'];
 
-        $sql = "UPDATE movies SET
-            movieName = :movieName,
-            mainCharacter = :mainCharacter,
-            mainActor = :mainActor,
+        $sql = "UPDATE marvelfilms SET
+            filmName = :filmName,
+            mainCharacters = :mainCharacters,
+            mainActors = :mainActors,
             runtime = :runtime,
             director = :director,
             writer = :writer
@@ -64,9 +64,9 @@
 
         $prepare = $db->prepare($sql);
         $prepare->execute([
-            ':movieName' => $movieName,
-            ':mainCharacter' => $mainCharacter,
-            ':mainActor' => $mainActor,
+            ':filmName' => $movieName,
+            ':mainCharacters' => $mainCharacter,
+            ':mainActors' => $mainActor,
             ':runtime' => $runtime,
             ':director' => $director,
             ':writer' => $writer

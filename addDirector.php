@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: HP Florian
- * Date: 26-3-2019
- * Time: 09:57
+ * Date: 17-05-2019
+ * Time: 09:06
  */
 require 'header.php'
 ?>
@@ -26,14 +26,13 @@ require 'header.php'
         <label for="">runtime</label>
         <input type="text" name="runtime">
     </div>
-       <div class="form-group">
+    <div class="form-group">
         <label for="">director</label>
-           <select name="director" id="0">
-               <option value="Jon Favreau">Jon Favreau</option>
-               <option value="Joe Johnston">Joe Johnston</option>
-               <option value=Joss Whedon">Joss Whedon</option>
-           </select>
-           
+        <select name="director" id="0">
+            <option value="Jon Favreau">Jon Favreau</option>
+            <option value="Joe Johnston">Joe Johnston</option>
+        </select>
+
     </div>
     <div class="form-group">
         <label for="">writer</label>

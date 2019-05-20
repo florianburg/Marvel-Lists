@@ -12,10 +12,7 @@ $prepare = $db->prepare($sql);
 $prepare->execute([
     ':id' => $id
 ]);
-
 $movies = $prepare->fetch(PDO::FETCH_ASSOC);
-
-
 ?>
 
 <form action="MoviesController.php?id=<?=$id?>" method="post">

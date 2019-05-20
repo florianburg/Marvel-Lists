@@ -6,7 +6,7 @@
  * Time: 09:14
  */
 $dbHost = 'localhost';
-$dbName = 'mcudb';
+$dbName = 'mdb';
 $dbUser = 'root';
 $dbPass = '';
 // Deze PDO is voor het aangeven wat de naam van de db is en wat de host is, daarna geef je aan wie de user is en het wachtwoord

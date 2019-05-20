@@ -6,42 +6,38 @@
  * Time: 10:29
  */
 require 'header.php';
-$id = $_GET['id'];// zoek uit waarom je eerst deze neer zet
-$sql = "SELECT * FROM movies WHERE id = :id";
-$prepare = $db->prepare($sql);
-$prepare->execute([
-    ':id' => $id
-]);
-//$prepare is dus nu een variable die de placeholder (:id) als een variable maakt uit de DB
-$movie = $prepare->fetch(PDO::FETCH_ASSOC);
 
+$sql = "SELECT marvelfilms.*, directors.*, directors.id AS directorID FROM directors JOIN marvelfilms ON directors.id = marvelfilms.director";
+$query = $db->query($sql);
+$movie = $query->fetch(PDO::FETCH_ASSOC);
 ?>
-<h1><?php
-    echo $movie['movieName'];
-    ?></h1>
+<?php
+
+    echo "<h1> {$movie['filmName']} </h1>";
+    ?>
 <p>main character:
     <?php
-    echo $movie['mainCharacter'];
+    echo "{$movie['mainCharacters']}";
     ?>
 </p>
 <p>main actor:
     <?php
-    echo $movie['mainActor'];
+    echo "{$movie['mainActors']}";
     ?>
 </p>
 <p>runtime:
     <?php
-    echo $movie['runtime'];
+    echo "{$movie['runtime']}";
     ?>
 </p>
-<p>director:
-    <?php
-    echo $movie['director'];
-    ?>
-</p>
+<?php
+echo"<a href='directorPage.php?id={$movie['directorID']}'>director: ";
+    echo "{$movie['name']}";
+echo "</a>";
+?>
 <p>writer:
     <?php
-    echo $movie['writer'];
+    echo "{$movie['writer']}";
     ?>
 </p>
 
